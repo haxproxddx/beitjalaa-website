@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es" id="htmlLang">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>beit jala Barber Lounge | Luxury Barber Shop</title>
+  <meta name="description"
+    content="beit jala is a luxury barber lounge offering premium haircuts, beard styling, facials, and massage experiences." />
+
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <!-- ===================== NAVBAR ===================== -->
+  <header class="navbar">
+    <div class="container navbar__inner">
+      <a href="index.html" class="navbar__logo">
+        <span class="navbar__logo-main">beit jala</span>
+        <span class="navbar__logo-sub" data-i18n="nav.barberLounge">Barber Lounge</span>
+      </a>
+
+      <nav class="navbar__nav">
+        <a href="index.html" class="navbar__link navbar__link--active" data-i18n="nav.home">Home</a>
+        <a href="services.html" class="navbar__link" data-i18n="nav.services">Services</a>
+        <button class="lang-toggle" id="langToggle" aria-label="Toggle language">
+          <svg class="lang-toggle__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+          </svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===================== HERO ===================== -->
+  <main>
+    <section class="hero" id="home">
+      <div class="hero__overlay"></div>
+      <!-- Replace src with your real hero image path -->
+      <div class="hero__background" style="background-image: url('images/hero-barbershop.jpg');"></div>
+
+      <div class="container hero__content animate-fade-in">
+        <p class="hero__eyebrow" data-i18n="hero.eyebrow">Luxury Grooming Experience</p>
+        <h1 class="hero__title">beit jala</h1>
+        <p class="hero__subtitle" data-i18n="hero.subtitle">
+          Precision cuts, refined grooming, and a calm, luxurious atmosphere tailored for the modern gentleman.
+        </p>
+        <div class="hero__actions">
+          <a href="services.html" class="btn btn--primary" data-i18n="hero.viewServices">View Services</a>
+          <a href="#about" class="btn btn--ghost" data-i18n="hero.discover">Discover beit jala</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== ABOUT ===================== -->
+    <section class="section section--dark" id="about">
+      <div class="container section__inner section__inner--split">
+        <div class="section__content animate-on-scroll">
+          <h2 class="section__title" data-i18n="about.title">About beit jala</h2>
+          <p class="section__subtitle" data-i18n="about.subtitle">
+            Where craftsmanship meets comfort.
+          </p>
+          <p data-i18n="about.text1">
+            At <span class="text-gold">beit jala</span>, every detail is curated for those who expect more from their
+            grooming ritual.
+            From precision haircuts to meticulous beard shaping and rejuvenating treatments, we deliver a complete
+            luxury
+            experience.
+          </p>
+          <p data-i18n="about.text2">
+            Our space is designed as a quiet escape from the rush of everyday life – a place where you can relax,
+            reset,
+            and walk out renewed with confidence.
+          </p>
+        </div>
+
+        <div class="about__image-wrapper animate-on-scroll">
+          <!-- Replace src with your real interior shot -->
+          <img src="images/about-interior.jpg" data-i18n-alt="about.imageAlt" alt="Interior of beit jala luxury barber shop"
+            class="about__image" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== TEAM ===================== -->
+    <section class="section section--light" id="team">
+      <div class="container section__inner">
+        <div class="section__header animate-on-scroll">
+          <h2 class="section__title" data-i18n="team.title">Meet the Team</h2>
+          <p class="section__subtitle" data-i18n="team.subtitle">
+            A team of dedicated professionals bringing precision and artistry to every detail.
+          </p>
+        </div>
+
+        <div class="team-grid">
+          <!-- Owner & Main Barber -->
+          <article class="team-card animate-on-scroll">
+            <!-- Replace src with Saliba's real photo -->
+            <div class="team-card__image-wrapper">
+              <img src="images/saliba-zreneh.jpg" alt="Portrait of Saliba Zreneh, Owner and Main Barber"
+                class="team-card__image" />
+            </div>
+            <h3 class="team-card__name">Saliba Zreneh</h3>
+            <p class="team-card__role" data-i18n="team.saliba.role">Owner &amp; Main Barber</p>
+            <p class="team-card__bio" data-i18n="team.saliba.bio">
+              Known for his meticulous attention to detail and refined sense of style, Saliba leads beit jala with
+              a passion for timeless grooming and modern precision.
+            </p>
+          </article>
+
+          <!-- Female Barber -->
+          <article class="team-card animate-on-scroll">
+            <!-- Replace src with real female barber image -->
+            <div class="team-card__image-wrapper">
+              <img src="images/female-barber.jpg" alt="Portrait of the female barber at beit jala"
+                class="team-card__image" />
+            </div>
+            <h3 class="team-card__name">Elena Maris</h3>
+            <p class="team-card__role" data-i18n="team.elena.role">Master Barber &amp; Stylist</p>
+            <p class="team-card__bio" data-i18n="team.elena.bio">
+              Elena blends artistic flair with technical mastery, crafting sharp, contemporary looks while maintaining
+              an exceptionally personal and relaxed client experience.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <span class="footer__logo">beit jala</span>
+        <p class="footer__text" data-i18n="footer.tagline">Luxury barber lounge for the modern gentleman.</p>
+      </div>
+      <div class="footer__meta">
+        <p class="footer__text">&copy; <span id="year"></span> beit jala. <span data-i18n="footer.rights">All rights reserved.</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Main script -->
+  <script src="js/main.js"></script>
+</body>
+
+</html>
+
+
