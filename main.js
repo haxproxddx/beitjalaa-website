@@ -81,6 +81,12 @@ var translations = {
       offerDesc: "A complete luxury ritual that refreshes your skin, refines your style, and releases deep tension – crafted for days when you need a full reset.",
       note: "Limited daily availability"
     },
+    location: {
+      title: "Barbershop Location",
+      subtitle: "Visit us at our location in Sunset Plaza (plaza centro), next to Labu.",
+      infoTitle: "Find Us",
+      address: "Sunset Plaza (plaza centro)<br>Next to Labu<br>beit jala, Comayagua"
+    },
     footer: {
       tagline: "Luxury barber lounge for the modern gentleman.",
       taglineServices: "Curated grooming rituals & exclusive offers.",
@@ -160,6 +166,12 @@ var translations = {
       offerDesc: "Un ritual de lujo completo que refresca tu piel, refina tu estilo y libera la tensión profunda: diseñado para días en los que necesitas un reinicio completo.",
       note: "Disponibilidad diaria limitada"
     },
+    location: {
+      title: "Ubicación de la Barbería",
+      subtitle: "Visítanos en nuestra ubicación en Sunset Plaza (plaza centro), junto a Labu.",
+      infoTitle: "Encuéntranos",
+      address: "Sunset Plaza (plaza centro)<br>Junto a Labu<br>beit jala, Comayagua"
+    },
     footer: {
       tagline: "Barbería de lujo para el caballero moderno.",
       taglineServices: "Rituales de aseo curados y ofertas exclusivas.",
@@ -193,7 +205,12 @@ function setLanguage(lang) {
     }
     
     if (translation) {
-      el.textContent = translation;
+      // Use innerHTML for elements that need HTML content (like address with <br>)
+      if (key === "location.address") {
+        el.innerHTML = translation;
+      } else {
+        el.textContent = translation;
+      }
     }
   });
   
