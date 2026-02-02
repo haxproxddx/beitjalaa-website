@@ -32,11 +32,11 @@ var translations = {
       subtitle: "A team of dedicated professionals bringing precision and artistry to every detail.",
       saliba: {
         role: "Owner & Main Barber",
-        bio: "Known for his meticulous attention to detail and refined sense of style, Saliba leads beit jala with a passion for timeless grooming and modern precision."
+        bio: "Known for his meticulous attention to detail and refined sense of style, Luis leads beit jala with a passion for timeless grooming and modern precision."
       },
       elena: {
         role: "Master Barber & Stylist",
-        bio: "Elena blends artistic flair with technical mastery, crafting sharp, contemporary looks while maintaining an exceptionally personal and relaxed client experience."
+        bio: "Angela blends artistic flair with technical mastery, crafting sharp, contemporary looks while maintaining an exceptionally personal and relaxed client experience."
       }
     },
     services: {
@@ -45,6 +45,10 @@ var translations = {
       haircut: {
         title: "Haircut",
         desc: "Classic or contemporary cuts, finished with precision detailing and luxury styling products."
+      },
+      haircutScissors: {
+        title: "Haircut only using scissors",
+        desc: "Precision haircut using only scissors for a classic, refined look."
       },
       hairBeard: {
         title: "Hair & Beard",
@@ -79,13 +83,20 @@ var translations = {
       badge: "Exclusive",
       offerTitle: "Facial Cleaning + Haircut + 30-minute Massage",
       offerDesc: "A complete luxury ritual that refreshes your skin, refines your style, and releases deep tension – crafted for days when you need a full reset.",
-      note: "Limited daily availability"
+      note: "Limited daily availability",
+      badge2: "Special Offer",
+      offer2Title: "2 in 1",
+      offer2Desc: "Bring a companion and both of you will receive the same service at the price of one person. This exclusive offer is available exclusively on Saturday, February 7, 2026, from 10:00 AM to 7:00 PM.",
+      offer2Note: "Saturday, February 7, 2026 | 10:00 AM - 7:00 PM"
     },
     location: {
       title: "Barbershop Location",
       subtitle: "Visit us at our location in Sunset Plaza (plaza centro), next to Labu.",
       infoTitle: "Find Us",
-      address: "Sunset Plaza (plaza centro)<br>Next to Labu<br>beit jala, Comayagua"
+      address: "Sunset Plaza (plaza centro)<br>Next to Labu<br>beit jala, Comayagua<br>+504 89155939"
+    },
+    popup: {
+      contactText: "To contact us use this number <span class=\"text-gold\">+ 504 89155939</span>"
     },
     footer: {
       tagline: "Luxury barber lounge for the modern gentleman.",
@@ -117,11 +128,11 @@ var translations = {
       subtitle: "Un equipo de profesionales dedicados que aportan precisión y arte a cada detalle.",
       saliba: {
         role: "Propietario y Barbero Principal",
-        bio: "Conocido por su meticulosa atención al detalle y su sentido refinado del estilo, Saliba lidera beit jala con pasión por el aseo atemporal y la precisión moderna."
+        bio: "Conocido por su meticulosa atención al detalle y su sentido refinado del estilo, Luis lidera beit jala con pasión por el aseo atemporal y la precisión moderna."
       },
       elena: {
         role: "Barbero Maestro y Estilista",
-        bio: "Elena combina el talento artístico con la maestría técnica, creando looks nítidos y contemporáneos mientras mantiene una experiencia de cliente excepcionalmente personal y relajada."
+        bio: "Angela combina el talento artístico con la maestría técnica, creando looks nítidos y contemporáneos mientras mantiene una experiencia de cliente excepcionalmente personal y relajada."
       }
     },
     services: {
@@ -130,6 +141,10 @@ var translations = {
       haircut: {
         title: "Corte de Pelo",
         desc: "Cortes clásicos o contemporáneos, terminados con detalles precisos y productos de peinado de lujo."
+      },
+      haircutScissors: {
+        title: "Corte de pelo solo con tijeras",
+        desc: "Corte de pelo de precisión usando solo tijeras para un look clásico y refinado."
       },
       hairBeard: {
         title: "Pelo y Barba",
@@ -164,13 +179,20 @@ var translations = {
       badge: "Exclusivo",
       offerTitle: "Limpieza Facial + Corte de Pelo + Masaje de 30 Minutos",
       offerDesc: "Un ritual de lujo completo que refresca tu piel, refina tu estilo y libera la tensión profunda: diseñado para días en los que necesitas un reinicio completo.",
-      note: "Disponibilidad diaria limitada"
+      note: "Disponibilidad diaria limitada",
+      badge2: "Oferta Especial",
+      offer2Title: "2 en 1",
+      offer2Desc: "Trae un acompañante y ambos recibirán el mismo servicio al precio de una persona. Esta oferta exclusiva está disponible únicamente el sábado 7 de febrero de 2026, de 10:00 AM a 7:00 PM.",
+      offer2Note: "Sábado, 7 de febrero de 2026 | 10:00 AM - 7:00 PM"
     },
     location: {
       title: "Ubicación de la Barbería",
       subtitle: "Visítanos en nuestra ubicación en Sunset Plaza (plaza centro), junto a Labu.",
       infoTitle: "Encuéntranos",
-      address: "Sunset Plaza (plaza centro)<br>Junto a Labu<br>beit jala, Comayagua"
+      address: "Sunset Plaza (plaza centro)<br>Junto a Labu<br>beit jala, Comayagua<br>+504 89155939"
+    },
+    popup: {
+      contactText: "Para contactarnos usa este número <span class=\"text-gold\">+ 504 89155939</span>"
     },
     footer: {
       tagline: "Barbería de lujo para el caballero moderno.",
@@ -205,8 +227,8 @@ function setLanguage(lang) {
     }
     
     if (translation) {
-      // Use innerHTML for elements that need HTML content (like address with <br>)
-      if (key === "location.address") {
+      // Use innerHTML for elements that need HTML content (like address with <br> or popup with <span>)
+      if (key === "location.address" || key === "popup.contactText") {
         el.innerHTML = translation;
       } else {
         el.textContent = translation;
@@ -286,6 +308,31 @@ document.addEventListener("DOMContentLoaded", function () {
     animatedItems.forEach(function (item) {
       item.classList.add("is-visible");
     });
+  }
+
+  // -------- Contact Popup (Services Page Only) --------
+  if (window.location.pathname.includes("services.html") || window.location.pathname.endsWith("services.html")) {
+    var contactPopup = document.getElementById("contactPopup");
+    var popupClose = document.getElementById("popupClose");
+    
+    if (contactPopup && popupClose) {
+      // Show popup after 5 seconds
+      setTimeout(function() {
+        contactPopup.classList.add("is-visible");
+      }, 5000);
+      
+      // Close popup when X button is clicked
+      popupClose.addEventListener("click", function() {
+        contactPopup.classList.remove("is-visible");
+      });
+      
+      // Close popup when clicking outside (optional)
+      contactPopup.addEventListener("click", function(e) {
+        if (e.target === contactPopup) {
+          contactPopup.classList.remove("is-visible");
+        }
+      });
+    }
   }
 });
 

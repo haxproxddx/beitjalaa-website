@@ -572,6 +572,7 @@ main {
   display: grid;
   grid-template-columns: minmax(0, 1.1fr);
   justify-content: center;
+  gap: 2rem;
 }
 
 .offer-card {
@@ -660,6 +661,95 @@ main {
 
 .footer__text {
   margin-top: 0.15rem;
+}
+
+.footer__phone {
+  margin-top: 0.5rem;
+  color: var(--color-gold);
+  font-weight: 500;
+}
+
+/* ------------------------- CONTACT POPUP ------------------------- */
+.contact-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--transition-med), visibility var(--transition-med);
+}
+
+.contact-popup.is-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.contact-popup__content {
+  position: relative;
+  background: radial-gradient(circle at top left, rgba(212, 175, 55, 0.15), #141414);
+  border: 1px solid rgba(212, 175, 55, 0.6);
+  border-radius: 18px;
+  padding: 2rem 3rem 2rem 2rem;
+  max-width: 420px;
+  width: 90%;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.95);
+  transform: translateY(20px);
+  transition: transform var(--transition-med);
+}
+
+.contact-popup.is-visible .contact-popup__content {
+  transform: translateY(0);
+}
+
+.contact-popup__close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.contact-popup__close:hover {
+  background: rgba(212, 175, 55, 0.2);
+  border-color: var(--color-gold);
+  color: var(--color-gold);
+  transform: scale(1.1);
+}
+
+.contact-popup__close svg {
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
+}
+
+.contact-popup__text {
+  font-size: 1rem;
+  color: var(--color-text);
+  line-height: 1.6;
+  text-align: center;
+  margin: 0;
+}
+
+.contact-popup__text .text-gold {
+  color: var(--color-gold);
+  font-weight: 500;
 }
 
 /* ------------------------- ANIMATIONS ------------------------- */

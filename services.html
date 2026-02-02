@@ -55,10 +55,21 @@
           <article class="service-card animate-on-scroll">
             <div class="service-card__header">
               <h2 class="service-card__title" data-i18n="services.haircut.title">Haircut</h2>
-              <span class="service-card__price">140 Lambira</span>
+              <span class="service-card__price">200 Lambira</span>
             </div>
             <p class="service-card__description" data-i18n="services.haircut.desc">
               Classic or contemporary cuts, finished with precision detailing and luxury styling products.
+            </p>
+          </article>
+
+          <!-- Haircut only using scissors -->
+          <article class="service-card animate-on-scroll">
+            <div class="service-card__header">
+              <h2 class="service-card__title" data-i18n="services.haircutScissors.title">Haircut only using scissors</h2>
+              <span class="service-card__price">230 Lambira</span>
+            </div>
+            <p class="service-card__description" data-i18n="services.haircutScissors.desc">
+              Precision haircut using only scissors for a classic, refined look.
             </p>
           </article>
 
@@ -66,7 +77,7 @@
           <article class="service-card animate-on-scroll">
             <div class="service-card__header">
               <h2 class="service-card__title" data-i18n="services.hairBeard.title">Hair &amp; Beard</h2>
-              <span class="service-card__price">290 Lambira</span>
+              <span class="service-card__price">300 Lambira</span>
             </div>
             <p class="service-card__description" data-i18n="services.hairBeard.desc">
               A complete grooming session that balances your haircut with a perfectly sculpted beard.
@@ -99,7 +110,7 @@
           <article class="service-card animate-on-scroll">
             <div class="service-card__header">
               <h2 class="service-card__title" data-i18n="services.massage30.title">Massage – 30 Minutes</h2>
-              <span class="service-card__price">750 Lambira</span>
+              <span class="service-card__price">600 Lambira</span>
             </div>
             <p class="service-card__description" data-i18n="services.massage30.desc">
               Focused relaxation to release tension in the neck, shoulders, and upper back.
@@ -140,9 +151,6 @@
       <div class="container">
         <div class="section__header section__header--center animate-on-scroll">
           <h2 class="section__title" data-i18n="offers.title">Signature Offer</h2>
-          <p class="section__subtitle" data-i18n="offers.subtitle">
-            Curated combinations designed for complete renewal.
-          </p>
         </div>
 
         <div class="offers-grid">
@@ -160,6 +168,19 @@
               <span class="offer-card__note" data-i18n="offers.note">Limited daily availability</span>
             </div>
           </article>
+
+          <article class="offer-card offer-card--highlight animate-on-scroll">
+            <div class="offer-card__badge" data-i18n="offers.badge2">Special Offer</div>
+            <h3 class="offer-card__title" data-i18n="offers.offer2Title">
+              2 in 1
+            </h3>
+            <p class="offer-card__description" data-i18n="offers.offer2Desc">
+              Bring a companion and both of you will receive the same service at the price of one person. This exclusive offer is available exclusively on Saturday, February 7, 2026, from 10:00 AM to 8:00 PM.
+            </p>
+            <div class="offer-card__footer">
+              <span class="offer-card__note" data-i18n="offers.offer2Note">Saturday, February 7, 2026 | 10:00 AM - 7:00 PM</span>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -171,12 +192,28 @@
       <div class="footer__brand">
         <span class="footer__logo">beit jala</span>
         <p class="footer__text" data-i18n="footer.taglineServices">Curated grooming rituals &amp; exclusive offers.</p>
+        <p class="footer__text footer__phone">+504 89155939</p>
       </div>
       <div class="footer__meta">
         <p class="footer__text">&copy; <span id="year"></span> beit jala. <span data-i18n="footer.rights">All rights reserved.</span></p>
       </div>
     </div>
   </footer>
+
+  <!-- ===================== CONTACT POPUP ===================== -->
+  <div class="contact-popup" id="contactPopup">
+    <div class="contact-popup__content">
+      <button class="contact-popup__close" id="popupClose" aria-label="Close popup">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+      <p class="contact-popup__text" data-i18n="popup.contactText">
+        To contact us use this number <span class="text-gold">+ 504 89155939</span>
+      </p>
+    </div>
+  </div>
 
   <!-- Main script -->
   <script src="main.js"></script>
