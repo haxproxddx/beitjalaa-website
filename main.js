@@ -35,7 +35,7 @@ var translations = {
         bio: "Known for his meticulous attention to detail and refined sense of style, Luis leads beit jala with a passion for timeless grooming and modern precision."
       },
       elena: {
-        role: "Master Barber & Stylist",
+        role: "Master Lady Barber & Stylist",
         bio: "Angela blends artistic flair with technical mastery, crafting sharp, contemporary looks while maintaining an exceptionally personal and relaxed client experience."
       }
     },
@@ -131,7 +131,7 @@ var translations = {
         bio: "Conocido por su meticulosa atención al detalle y su sentido refinado del estilo, Luis lidera beit jala con pasión por el aseo atemporal y la precisión moderna."
       },
       elena: {
-        role: "Barbero Maestro y Estilista",
+        role: "Barbera Maestra y Estilista",
         bio: "Angela combina el talento artístico con la maestría técnica, creando looks nítidos y contemporáneos mientras mantiene una experiencia de cliente excepcionalmente personal y relajada."
       }
     },
